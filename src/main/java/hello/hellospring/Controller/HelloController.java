@@ -24,7 +24,7 @@ public class HelloController {
 
     @GetMapping("hello-string")
     @ResponseBody
-    public String helloStrgin(@RequestParam(value = "name") String name){
+    public String helloString(@RequestParam(value = "name") String name){
         return "hello " + name; //단순 문자열 리턴
     }
 

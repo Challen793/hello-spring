@@ -1,9 +1,11 @@
 package hello.hellospring.repositorry;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository //스프링이 어 얘는 리포지토리네 하고 빈으로 등록해줌
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); //동시성 문제 있을 수 있음

@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service //스프링이 어 얘는 서비스네 하고 빈으로 등록해줌
+//@Service //스프링이 어 얘는 서비스네 하고 빈으로 등록해줌
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
     //외부에서 memberRepository를 만들어서 넣어준다 > DI(Dependency Injection)
-    @Autowired
+    //@Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

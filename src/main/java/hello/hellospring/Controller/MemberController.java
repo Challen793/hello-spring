@@ -4,8 +4,11 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller //스프링이 어 얘는 컨트롤러네 하고 빈으로 등록해줌
 public class MemberController {
@@ -34,6 +37,13 @@ public class MemberController {
 
         System.out.println(member.getId() + ", " + member.getName());
         return "redirect:/";
+    }
+
+    @GetMapping("members")
+    public String list(Model model){
+        List<Member> members = memberService.findMembers();
+        model.addAttribute("members", members);
+        return "members/memberList";
     }
 
 }
